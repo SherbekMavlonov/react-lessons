@@ -1,0 +1,35 @@
+.heading {
+  color: red;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: bisque;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.role-badge {
+  color: #66cb9f;
+  background-color: #deffee;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 10px;
+  display: inline-block;
+}
+
+.box {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 500px;
+  margin: 0 auto 30px;
+  padding: 20px;
+}
+
+.d-flex {
+  gap: 10px;
+  display: flex;
+}
+
+/*# sourceMappingURL=index.e5980c4e.css.map */
