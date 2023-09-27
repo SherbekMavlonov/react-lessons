@@ -1,0 +1,20 @@
+.box {
+  background-color: green;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.box-small {
+  width: 200px;
+  height: 200px;
+}
+
+.box-medium {
+  width: 400px;
+  height: 400px;
+}
+
+.box-large {
+  width: 600px;
+  height: 600px;
+}
