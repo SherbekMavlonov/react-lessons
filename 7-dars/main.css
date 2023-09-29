@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.sidebar {
+  background-color: #ccc;
+  width: 30%;
+  padding: 30px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.s-between {
+  justify-content: space-between;
+}
+
+.s-around {
+  justify-content: space-around;
+}
+.column {
+  flex-direction: column;
+}
+.gap-40 {
+  gap: 40px;
+}
+
+.user-container {
+  margin-bottom: 20px;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.message-status {
+  position: absolute;
+  right: 0;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.btn-delete {
+  background-color: crimson;
+  color: #fff;
+}
+
+.btn-success {
+  background-color: greenyellow;
+  color: #000;
+}
+.input {
+  padding: 6px 15px;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  font-size: 18px;
+  width: 100%;
+}
+
+.chat {
+  width: 100%;
+  height: 100vh;
+  background-color: #cccccc72;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.msg {
+  background-color: #fff;
+  max-width: 40%;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 25px;
+
+  /* margin-bottom: 100px; */
+}
+
+.my-message {
+  margin-left: auto;
+  margin-bottom: 10px;
+  background-color: rgb(184, 232, 174);
+}
+
+.input-container {
+  margin-top: 10px;
+  background-color: beige;
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background-color: #dfcece;
+  min-width: 600px;
+  min-height: 400px;
+  padding: 10px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  font-size: 25px;
+  background-color: red;
+  padding: 2px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+}
+
+.add-contact-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
