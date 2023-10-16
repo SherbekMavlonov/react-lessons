@@ -1,0 +1,80 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "name": "Tesha",
+      "id": 2
+    },
+    {
+      "name": "dasdsa",
+      "id": 3
+    },
+    {
+      "name": "",
+      "id": 4
+    },
+    {
+      "name": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "id": 7
+    },
+    {
+      "name": "",
+      "id": 8
+    },
+    {
+      "name": "",
+      "id": 9
+    },
+    {
+      "name": "Tesha1",
+      "id": 10
+    },
+    {
+      "name": "Tesha2",
+      "id": 11
+    }
+  ],
+  "news": [
+    {
+      "title": "“Россия ва Хитой АҚШнинг ўрнини эгаллаш пайида” — ўзбек экспертлари Афғонистондаги вазият ҳақида",
+      "description": "Сентябр охирида “Толибон” расмийлари ва ўнга яқин давлатнинг Афғонистон бўйича махсус вакиллари Москва форматидаги 5-учрашувга йиғилди. Хўш, толиблар билан бу каби мулоқотлардан фойда бўляптими, улар билан нималар гаплашиляпти, Афғонистонда кимнинг қанақа манфаати бор? “Геосиёсат”нинг навбатдаги сонида ўзбек экспертлари шу ҳақда сўз юритди.",
+      "href": "/news/2023/10/09/rossiya-va-xitoy-aqshning-ornini-egallash-payida-ozbek-ekspertlari-afgonistondagi-vaziyat-haqida",
+      "orginal_image": "9/HkbF-7ds4cRGRS6Ppp1RQR24_UY4-lAA.jpg",
+      "image": "https://storage.kun.uz/source/thumbnails/_medium/9/HkbF-7ds4cRGRS6Ppp1RQR24_UY4-lAA_medium.jpg",
+      "category_name": "Жаҳон",
+      "category_href": "/news/category/jahon",
+      "published": "12:25 / 09.10.2023",
+      "day": "9 Октябрь",
+      "time": "12:25",
+      "pub_date": "09.10.2023",
+      "views_count": 19892,
+      "is_ads": false,
+      "is_pinned": false,
+      "show_image": true,
+      "show_desc": true,
+      "font_style": "normal",
+      "id": 3
+    }
+  ]
+}
