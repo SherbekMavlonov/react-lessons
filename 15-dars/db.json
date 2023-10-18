@@ -1,0 +1,14 @@
+{
+  "todos": [
+    {
+      "todo": "test",
+      "status": 0,
+      "id": 1
+    },
+    {
+      "todo": "Uyga vazifani qilishim kerak.",
+      "status": 1,
+      "id": 2
+    }
+  ]
+}
