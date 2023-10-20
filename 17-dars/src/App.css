@@ -1,0 +1,22 @@
+.App {
+  display: flex;
+  flex-direction: row;
+}
+
+.todos {
+  background: grey;
+  height: 500px;
+  width: 500px;
+  margin: 10px;
+}
+
+.done {
+  background: grey;
+  height: 500px;
+  width: 500px;
+  margin: 10px;
+}
+
+.dragged {
+  background-color: white;
+}
