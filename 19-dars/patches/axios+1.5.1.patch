@@ -1,0 +1,12 @@
+diff --git a/node_modules/axios/lib/axios.js b/node_modules/axios/lib/axios.js
+index 873f246..165d908 100644
+--- a/node_modules/axios/lib/axios.js
++++ b/node_modules/axios/lib/axios.js
+@@ -64,6 +64,7 @@ axios.Cancel = axios.CanceledError;
+ 
+ // Expose all/spread
+ axios.all = function all(promises) {
++  console.log("test");
+   return Promise.all(promises);
+ };
+ 

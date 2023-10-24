@@ -13,9 +13,15 @@ function Card({
   discountPercent,
   _id,
   genre,
+  isLiked,
+  handleLikeBtnClick,
 }) {
   const navigate = useNavigate()
 
+  const handleClick = (e) => {
+    e.stopPropagation()
+    handleLikeBtnClick(_id)
+  }
   return (
     <div
       className='w-[250px]  border border-gray-500 cursor-pointer p-1 text-center relative'
@@ -27,6 +33,14 @@ function Card({
         })} absolute top-0 left-0 rounded-none`}
       >
         {badgeText}
+      </span>
+      <span
+        onClick={handleClick}
+        className={`${badgeVariants({
+          variant: 'destructive',
+        })} absolute top-0 right-0 rounded-none`}
+      >
+        {!isLiked ? '❤️' : '🫢'}
       </span>
       <img
         src={imgSrc}
@@ -57,4 +71,6 @@ Card.propTypes = {
   discountPercent: PropTypes.number,
   _id: PropTypes.string,
   genre: PropTypes.string,
+  isLiked: PropTypes.any,
+  handleLikeBtnClick: PropTypes.func,
 }

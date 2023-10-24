@@ -5,8 +5,15 @@ import Card from '@/components/card'
 import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { genres } from '@/constants/genre'
+import { Button } from '@/components/ui/button'
 
-function Shop({ products, selectedGenres, setSelectedGenres }) {
+function Shop({
+  products,
+  selectedGenres,
+  setSelectedGenres,
+  handleLikeBtnClick,
+  wishList,
+}) {
   const [sliderValues, setSliderValues] = useState({
     min: 0,
     max: 0,
@@ -18,6 +25,11 @@ function Shop({ products, selectedGenres, setSelectedGenres }) {
     setRange(value)
   }
 
+  useEffect(() => {
+    if (!selectedGenres.length) {
+      setSelectedGenres([...genres])
+    }
+  }, [])
   useEffect(() => {
     if (products) {
       setFilteredProducts(products)
@@ -46,14 +58,14 @@ function Shop({ products, selectedGenres, setSelectedGenres }) {
         (product.discountedPrice <= range[1] ||
           product.originalPrice <= range[1])
     )
-    if (selectedGenres.length) {
-      newProducts = newProducts.filter(
-        (pr) =>
-          selectedGenres.findIndex(
-            (gr) => gr.title.toUpperCase() == pr.genre.toUpperCase()
-          ) !== -1
-      )
-    }
+
+    newProducts = newProducts.filter(
+      (pr) =>
+        selectedGenres.findIndex(
+          (gr) => gr.title.toUpperCase() == pr.genre.toUpperCase()
+        ) !== -1
+    )
+
     setFilteredProducts([...newProducts])
   }, [range, selectedGenres])
 
@@ -70,15 +82,22 @@ function Shop({ products, selectedGenres, setSelectedGenres }) {
       setSelectedGenres([...selectedGenres])
     }
   }
+  const onClear = () => {
+    setSelectedGenres([...genres])
+    setRange([0, sliderValues.max])
+  }
 
   return (
     <div>
+      <Button onClick={onClear} className='mb-5'>
+        Clear Filter
+      </Button>
       <Slider
         defaultValue={[sliderValues.min, sliderValues.max]}
         max={sliderValues?.max}
         min={0}
         step={0.5}
-        value={[sliderValues.min, sliderValues.max]}
+        value={range}
         onValueChange={handleRangeChange}
         formatLabel={(value) => `${value} `}
       />
@@ -103,9 +122,22 @@ function Shop({ products, selectedGenres, setSelectedGenres }) {
       </div>
 
       <div className='flex justify-around mt-8 gap-5 flex-wrap'>
-        {filteredProducts.map((product) => (
-          <Card key={product._id} {...product} />
-        ))}
+        {filteredProducts.length ? (
+          filteredProducts.map((product) => (
+            <Card
+              key={product._id}
+              {...product}
+              handleLikeBtnClick={handleLikeBtnClick}
+              isLiked={
+                wishList.findIndex(
+                  (wishItem) => wishItem._id === product._id
+                ) === -1
+              }
+            />
+          ))
+        ) : (
+          <h1>Not found</h1>
+        )}
       </div>
     </div>
   )
@@ -118,4 +150,6 @@ Shop.propTypes = {
   products: PropTypes.array,
   selectedGenres: PropTypes.array,
   setSelectedGenres: PropTypes.func,
+  handleLikeBtnClick: PropTypes.func,
+  wishList: PropTypes.array,
 }

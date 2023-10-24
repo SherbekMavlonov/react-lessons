@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import * as SliderPrimitive from '@radix-ui/react-slider'
 
 import { cn } from '@/lib/utils'
@@ -9,14 +9,15 @@ const Slider = React.forwardRef(
     ref
   ) => {
     const initialValue = Array.isArray(value) ? value : [min, max]
-    const [localValues, setLocalValues] = useState(initialValue)
 
     const handleValueChange = (newValues) => {
-      setLocalValues(newValues)
+      // setLocalValues(newValues)
       if (onValueChange) {
         onValueChange(newValues)
       }
     }
+
+    // console.log(localValues)
 
     return (
       <SliderPrimitive.Root
@@ -24,7 +25,7 @@ const Slider = React.forwardRef(
         min={min}
         max={max}
         step={step}
-        value={localValues}
+        value={initialValue}
         onValueChange={handleValueChange}
         className={cn(
           'relative flex w-full touch-none select-none items-center',
@@ -35,7 +36,7 @@ const Slider = React.forwardRef(
         <SliderPrimitive.Track className='relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20'>
           <SliderPrimitive.Range className='absolute h-full bg-primary' />
         </SliderPrimitive.Track>
-        {localValues.map((value, index) => (
+        {initialValue.map((value, index) => (
           <React.Fragment key={index}>
             <div
               className='absolute text-center'
